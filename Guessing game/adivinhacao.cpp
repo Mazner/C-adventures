@@ -15,8 +15,11 @@ int main()
     cout << "o numero secreto eh: " << NUMERO_SECRETO << endl; 
     cout << "capisce?" << endl;
 
+/*Booleana criada para fazer com que o laço de repetição não fique infinito*/
+
     bool nao_acertou = true;
     int tentativas = 0;
+    double score = 1000;
 
     while (nao_acertou){
     tentativas++;
@@ -45,10 +48,14 @@ int main()
     if(menor){
         cout << "Seu chute foi menor do que o numero secreto..." << endl << endl;
     }
+
+    score = score - abs(NUMERO_SECRETO - chute) / 2.0;
 }
 
    cout << "Voce acertou o numero secreto em " << tentativas << " tentativas!!" << endl << endl; 
-
+    
+   cout << "Sua pontuacao foi: " << score << endl << endl;
+    
    cout << "**************************************" << endl;
    cout << "******     Fim de jogo!!        ******" << endl;
    cout << "**************************************" << endl << endl;
